@@ -20,9 +20,17 @@ export default class extends React.Component {
           totalSlides={3}
         >
           <Slider>
-            <Slide index={0}>I am the first Slide.</Slide>
-            <Slide index={1}>I am the second Slide.</Slide>
-            <Slide index={2}>I am the third Slide.</Slide>
+            <SlideWrapper>
+              <Slide index={0} className="xyz">
+                I am the first Slide.
+              </Slide>
+            </SlideWrapper>
+            <SlideWrapper>
+              <Slide index={1}>I am the second Slide.</Slide>
+            </SlideWrapper>
+            <SlideWrapper>
+              <Slide index={2}>I am the third Slide.</Slide>
+            </SlideWrapper>
           </Slider>
           <CarouselButton>
             <ButtonBack>Back</ButtonBack>
@@ -40,6 +48,13 @@ const PureReactCarouselWrapper = styled.div`
   border: 3px solid blue;
   max-height: 50vh;
   /* margin: 20px; */
+  .xyz {
+    border: 3px solid gold;
+  }
+`;
+
+const SlideWrapper = styled.div`
+  border: 1px dotted purple;
 `;
 
 const CarouselButton = styled.div`
