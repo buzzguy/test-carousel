@@ -17,6 +17,7 @@ class NukaCarousel extends React.Component {
         <Carousel
           // wrapAround="true"
           // withoutControls="true"
+          renderBottomCenterControls={null}
           heightMode={"max"} //is this working???
           slideIndex={slideIndex} //adding this with state above
           afterSlide={slideIndex => this.setState({ slideIndex })} //adding this with state above
