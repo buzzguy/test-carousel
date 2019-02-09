@@ -10,12 +10,15 @@ class NukaCarousel extends React.Component {
   }; //adding state
 
   render() {
+    const { slideIndex } = this.state;
+    console.log("NukaCarousel, slideIndex: ", slideIndex);
     return (
       <NukaCarouselWrapper>
         <Carousel
           // wrapAround="true"
+          // withoutControls="true"
           heightMode={"max"} //is this working???
-          slideIndex={this.state.slideIndex} //adding this with state above
+          slideIndex={slideIndex} //adding this with state above
           afterSlide={slideIndex => this.setState({ slideIndex })} //adding this with state above
         >
           <img src={lion} alt="lion pic" id="lion-king" />
