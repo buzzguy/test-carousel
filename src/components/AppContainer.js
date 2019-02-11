@@ -8,12 +8,14 @@ class AppContainer extends Component {
   render() {
     return (
       <AppContainerWrapper>
-        <h1>hello from AppContainer</h1>
+        {/* <h1>hello from AppContainer</h1> */}
+
         {/* 
         <p>PureReactCarousel:</p>
-        <PureReactCarousel /> */}
+        <PureReactCarousel /> 
+        */}
 
-        <p>NukaCarousel:</p>
+        {/* <p>NukaCarousel:</p> */}
         <NukaCarousel />
       </AppContainerWrapper>
     );
@@ -23,6 +25,7 @@ class AppContainer extends Component {
 export default AppContainer;
 
 const AppContainerWrapper = styled.div`
-  border: 3px solid red;
+  background: limegreen;
+  border: 1px solid black;
   margin: 20px;
 `;
