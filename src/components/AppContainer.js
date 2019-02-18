@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 // import PureReactCarousel from "./PureReactCarousel.js";
-import NukaCarousel from "./NukaCarousel.js";
+// import NukaCarousel from "./NukaCarousel.js";
+import ReactResponsiveCarousel from "./ReactResponsiveCarousel.js";
 
 class AppContainer extends Component {
   render() {
@@ -16,7 +17,10 @@ class AppContainer extends Component {
         */}
 
         {/* <p>NukaCarousel:</p> */}
-        <NukaCarousel />
+        {/* <NukaCarousel /> */}
+
+        <p>ReactResponsiveCarousel:</p>
+        <ReactResponsiveCarousel />
       </AppContainerWrapper>
     );
   }
