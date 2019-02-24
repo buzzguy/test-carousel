@@ -2,7 +2,7 @@ import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-const ReactResponsiveCarouselExample = () => {
+const HomepageCarouselExample = () => {
   return (
     <Carousel showArrows showStatus showIndicators showThumbs infiniteLoop>
       <div>
@@ -52,4 +52,4 @@ const ReactResponsiveCarouselExample = () => {
   )
 }
 
-export default ReactResponsiveCarouselExample
+export default HomepageCarouselExample
