@@ -4,6 +4,9 @@ import styled from 'styled-components'
 
 // import CarouselCaption from './CarouselCaption'
 
+import ChevronLeftLarge from '../../assets/SvgChevronLeftLarge'
+import ChevronRightLarge from '../../assets/SvgChevronRightLarge'
+
 import homepageImage from '../../assets/homepage-image.jpg'
 import lionPic from '../../assets/lion.jpg'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -140,6 +143,16 @@ function captionLinkClicked() {
 const HomepageCarousel = () => {
   return (
     <HomepageCarouselWrapper>
+      {/* <CenterLeft onClick={previous}> */}
+      <CenterLeft>
+        <ChevronLeftLarge fill="white" />
+      </CenterLeft>
+
+      {/* <CenterRight onClick={next}> */}
+      <CenterRight>
+        <ChevronRightLarge fill="white" />
+      </CenterRight>
+
       <Carousel
         showArrows
         showStatus={false}
@@ -173,6 +186,32 @@ const HomepageCarousel = () => {
     </HomepageCarouselWrapper>
   )
 }
+
+const CenterLeft = styled.div`
+  color: white;
+  cursor: pointer;
+  display: flex; /* to center svg vertically within div */
+  font-size: xx-large;
+  left: 2%;
+  position: absolute;
+  top: 50%;
+  align-self: center;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+`
+
+const CenterRight = styled.div`
+  color: white;
+  cursor: pointer;
+  display: flex; /* to center svg vertically within div */
+  font-size: xx-large;
+  left: 98%;
+  position: absolute;
+  top: 50%;
+  align-self: center;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+`
 
 const SlideImage = styled.img`
   background-image: url({src});
