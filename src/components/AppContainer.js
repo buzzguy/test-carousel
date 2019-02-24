@@ -23,7 +23,7 @@ class AppContainer extends Component {
         {/* <p>ReactResponsiveCarouselExample:</p> */}
         {/* <ReactResponsiveCarouselExample /> */}
 
-        <p>HomepageCarousel:</p>
+        {/* <p>HomepageCarousel:</p> */}
         <HomepageCarousel />
       </AppContainerWrapper>
     )
@@ -33,7 +33,7 @@ class AppContainer extends Component {
 export default AppContainer
 
 const AppContainerWrapper = styled.div`
-  background: limegreen;
-  border: 1px solid black;
-  margin: 20px;
+  background: gray;
+  /* border: 1px solid black; */
+  /* margin: 20px; */
 `
