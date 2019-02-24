@@ -2,6 +2,8 @@ import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import styled from 'styled-components'
 
+// import CarouselCaption from './CarouselCaption'
+
 import homepageImage from '../../assets/homepage-image.jpg'
 import lionPic from '../../assets/lion.jpg'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -136,15 +138,28 @@ const HomepageCarousel = () => {
     <HomepageCarouselWrapper>
       <Carousel
         showArrows
-        showStatus
+        showStatus={false}
         showIndicators
         showThumbs={false}
         infiniteLoop
       >
         {slides.map(eachSlide => (
-          <div>
+          <div key={eachSlide.src}>
             <img src={eachSlide.src} alt={eachSlide.alt} />
-            <p className="legend">{eachSlide.caption}</p>
+            <CaptionLinkWrapper>
+              <CaptionUnitAddress>{eachSlide.address}</CaptionUnitAddress>
+              <CaptionUnitInfo>
+                {eachSlide.bed} BD | {eachSlide.bath} BA
+              </CaptionUnitInfo>
+              <CaptionUnitPrice>
+                {new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                }).format(eachSlide.price)}
+              </CaptionUnitPrice>
+            </CaptionLinkWrapper>
           </div>
         ))}
       </Carousel>
@@ -152,21 +167,70 @@ const HomepageCarousel = () => {
   )
 }
 
+const CaptionLinkWrapper = styled.div`
+  background-color: black;
+  bottom: auto;
+  /* border: 5px solid gold; */
+  color: white;
+  cursor: help;
+  font-family: Avenir;
+  height: 48px;
+  /* padding: 14px 24px 20px 20px; */
+  padding-top: 14px;
+  padding-right: 24px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  position: absolute;
+  opacity: 0.7;
+  left: auto;
+  right: 0;
+  top: 0;
+`
+
+const CaptionUnitAddress = styled.span`
+  color: white;
+  font-family: 'Chronicle Display';
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  line-height: 18px;
+  padding-right: 20px;
+`
+const CaptionUnitInfo = styled.span`
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding-right: 20px;
+  padding-top: 3px;
+`
+const CaptionUnitPrice = styled.span`
+  font-size: 14px;
+  letter-spacing: 0.3px;
+`
+
 const HomepageCarouselWrapper = styled.div`
-  border: 3px solid red;
-  margin-left: 50px;
-  margin-right: 50px;
+  /* border: 3px solid red; */
+  /* margin-left: 50px; */
+  /* margin-right: 50px; */
+  position: relative;
+
   /* max-height: 200px; */
   /* this does nothing */
 
   /* overriding default styles of ReactResponsiveCarousel */
+
+  button {
+    background: pink !important;
+  }
+
   .carousel .thumb img {
     width: 100% !important;
     height: 100% !important;
   }
 
   .carousel .slide img {
-    max-height: 300px; /* change this to whatever you want */
+    max-height: 720px; /* this should be about 720 based on InVision design */
+    /* NOTE: need to account for images less than max-height above */
+    /* max-height: 400px; */
     width: auto;
   }
 `
