@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from 'styled-components'
 
 // import PureReactCarousel from "./PureReactCarousel.js";
 // import NukaCarousel from "./NukaCarousel.js";
-import ReactResponsiveCarousel from "./ReactResponsiveCarousel.js";
+import ReactResponsiveCarouselExample from './ReactResponsiveCarousel/ReactResponsiveCarouselExample'
 
 class AppContainer extends Component {
   render() {
@@ -19,17 +19,17 @@ class AppContainer extends Component {
         {/* <p>NukaCarousel:</p> */}
         {/* <NukaCarousel /> */}
 
-        <p>ReactResponsiveCarousel:</p>
-        <ReactResponsiveCarousel />
+        <p>ReactResponsiveCarouselExample:</p>
+        <ReactResponsiveCarouselExample />
       </AppContainerWrapper>
-    );
+    )
   }
 }
 
-export default AppContainer;
+export default AppContainer
 
 const AppContainerWrapper = styled.div`
   background: limegreen;
   border: 1px solid black;
   margin: 20px;
-`;
+`
