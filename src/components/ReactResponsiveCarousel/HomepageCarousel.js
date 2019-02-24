@@ -149,7 +149,10 @@ const HomepageCarousel = () => {
       >
         {slides.map(eachSlide => (
           <div key={eachSlide.src}>
-            <img src={eachSlide.src} alt={eachSlide.alt} />
+            {/* <img src={eachSlide.src} alt={eachSlide.alt} /> */}
+
+            <SlideImage src={eachSlide.src} alt={eachSlide.alt} />
+
             <CaptionLinkWrapper onClick={captionLinkClicked}>
               <CaptionUnitAddress>{eachSlide.address}</CaptionUnitAddress>
               <CaptionUnitInfo>
@@ -170,6 +173,16 @@ const HomepageCarousel = () => {
     </HomepageCarouselWrapper>
   )
 }
+
+const SlideImage = styled.img`
+  background-image: url({src});
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
+  background-size: cover;
+  /* background-position: center; */
+  width: 100%;
+  height: auto;
+`
 
 const CaptionLinkWrapper = styled.div`
   background-color: black;
