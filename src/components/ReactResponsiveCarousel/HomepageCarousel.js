@@ -133,6 +133,10 @@ const slides = [
   },
 ]
 
+function captionLinkClicked() {
+  console.log('caption link clicked!!!')
+}
+
 const HomepageCarousel = () => {
   return (
     <HomepageCarouselWrapper>
@@ -146,7 +150,7 @@ const HomepageCarousel = () => {
         {slides.map(eachSlide => (
           <div key={eachSlide.src}>
             <img src={eachSlide.src} alt={eachSlide.alt} />
-            <CaptionLinkWrapper>
+            <CaptionLinkWrapper onClick={captionLinkClicked}>
               <CaptionUnitAddress>{eachSlide.address}</CaptionUnitAddress>
               <CaptionUnitInfo>
                 {eachSlide.bed} BD | {eachSlide.bath} BA
