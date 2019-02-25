@@ -42,17 +42,20 @@ const slides = [
   },
 ];
 
-const TestCarouselForLDP = () => (
-  <Carousel showArrows showStatus showIndicators showThumbs infiniteLoop>
-    {slides.map(eachSlide => {
-      return (
-        <div>
-          <img src={eachSlide.src} alt={eachSlide.alt} />
-          <p className="legend">{eachSlide.legend}</p>
-        </div>
-      );
-    })}
-  </Carousel>
-);
+const TestCarouselForLDP = props => {
+  console.log('TestCarouselForLDP, props is: ', props);
+  return (
+    <Carousel showArrows showStatus showIndicators showThumbs infiniteLoop>
+      {slides.map(eachSlide => {
+        return (
+          <div key={eachSlide.src}>
+            <img src={eachSlide.src} alt={eachSlide.alt} />
+            <p className="legend">{eachSlide.legend}</p>
+          </div>
+        );
+      })}
+    </Carousel>
+  );
+};
 
 export default TestCarouselForLDP;
