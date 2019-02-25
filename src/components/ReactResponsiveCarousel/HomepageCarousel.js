@@ -2,8 +2,6 @@ import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import styled from 'styled-components'
 
-// import CarouselCaption from './CarouselCaption'
-
 import ChevronLeftLarge from '../../assets/SvgChevronLeftLarge'
 import ChevronRightLarge from '../../assets/SvgChevronRightLarge'
 
@@ -141,37 +139,26 @@ function captionLinkClicked() {
 }
 
 const HomepageCarousel = props => {
-  console.log('homepageCarousel props: ', props)
+  //   console.log('homepageCarousel props: ', props)
   return (
     <HomepageCarouselWrapper>
-      {/* <CenterLeft onClick={previous}> */}
       <CenterLeft>
         <ChevronLeftLarge fill="white" />
       </CenterLeft>
 
-      {/* <CenterRight onClick={next}> */}
       <CenterRight>
         <ChevronRightLarge fill="white" />
       </CenterRight>
 
       <Carousel
-        // showArrows={false}
         showArrows
         showStatus={false}
         showIndicators
         showThumbs={false}
         infiniteLoop
       >
-        {/* <CenterRight onClick={onClickItem}> */}
-
-        {/* <CenterRight>
-          <ChevronRightLarge fill="white" />
-              </CenterRight> */}
-
         {slides.map(eachSlide => (
           <div key={eachSlide.src}>
-            {/* <img src={eachSlide.src} alt={eachSlide.alt} /> */}
-
             <SlideImage src={eachSlide.src} alt={eachSlide.alt} />
 
             <CaptionLinkWrapper onClick={captionLinkClicked}>
@@ -196,37 +183,34 @@ const HomepageCarousel = props => {
 }
 
 const CenterLeft = styled.div`
-  color: white;
-  cursor: pointer;
+  cursor: wait;
   display: flex; /* to center svg vertically within div */
-  font-size: xx-large;
   left: 2%;
   position: absolute;
   top: 50%;
-  align-self: center;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 1;
+  filter: drop-shadow(
+    0 0.1rem 0.1rem black
+  ); /* outline for light backgrounds */
 `
 
 const CenterRight = styled.div`
-  color: white;
-  cursor: pointer;
+  cursor: wait;
   display: flex; /* to center svg vertically within div */
-  font-size: xx-large;
   left: 98%;
   position: absolute;
   top: 50%;
-  align-self: center;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 1;
+  filter: drop-shadow(
+    0 0.1rem 0.1rem black
+  ); /* outline for light backgrounds */
 `
 
 const SlideImage = styled.img`
   background-image: url({src});
-  /* background-repeat: no-repeat; */
-  /* background-size: contain; */
   background-size: cover;
-  /* background-position: center; */
   width: 100%;
   height: auto;
 `
@@ -234,12 +218,10 @@ const SlideImage = styled.img`
 const CaptionLinkWrapper = styled.div`
   background-color: black;
   bottom: auto;
-  /* border: 5px solid gold; */
   color: white;
   cursor: help;
   font-family: Avenir;
   height: 48px;
-  /* padding: 14px 24px 20px 20px; */
   padding-top: 14px;
   padding-right: 24px;
   padding-bottom: 20px;
@@ -272,18 +254,14 @@ const CaptionUnitPrice = styled.span`
 `
 
 const HomepageCarouselWrapper = styled.div`
-  /* border: 3px solid red; */
-  /* margin-left: 50px; */
-  /* margin-right: 50px; */
   position: relative;
 
-  /* max-height: 200px; */
-  /* this does nothing */
-
   /* overriding default styles of ReactResponsiveCarousel */
-
   button {
-    background: pink !important;
+    :hover {
+      background-color: black !important;
+      opacity: 0.2 !important;
+    }
   }
 
   .carousel .thumb img {
@@ -295,7 +273,6 @@ const HomepageCarouselWrapper = styled.div`
     min-height: 650px; /* confirm what the min-height of images should be */
     max-height: 720px; /* this should be about 720 based on InVision design */
     /* NOTE: need to account for images less than max-height above */
-    /* max-height: 400px; */
     width: auto;
   }
 
@@ -303,6 +280,13 @@ const HomepageCarouselWrapper = styled.div`
     top: 45%;
     bottom: 45%;
     padding: 20px;
+    font-size: 20px;
+  }
+
+  .carousel .control-arrow:before,
+  .carousel.carousel-slider .control-arrow:before {
+    border-top: none;
+    border-bottom: none;
   }
 `
 
