@@ -44,8 +44,17 @@ const slides = [
 
 const TestCarouselForLDP = props => {
   console.log('TestCarouselForLDP, props is: ', props);
+  const { selectedItem } = props;
+  console.log('selectedItem is: ', selectedItem);
   return (
-    <Carousel showArrows showStatus showIndicators showThumbs infiniteLoop>
+    <Carousel
+      selectedItem={selectedItem}
+      showArrows
+      showStatus
+      showIndicators
+      showThumbs
+      infiniteLoop
+    >
       {slides.map(eachSlide => {
         return (
           <div key={eachSlide.src}>
