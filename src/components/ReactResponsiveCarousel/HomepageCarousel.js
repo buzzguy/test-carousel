@@ -153,7 +153,7 @@ const HomepageCarousel = props => {
       <Carousel
         showArrows
         showStatus={false}
-        showIndicators
+        showIndicators={false}
         showThumbs={false}
         infiniteLoop
       >
@@ -241,6 +241,7 @@ const CaptionUnitAddress = styled.span`
   line-height: 18px;
   padding-right: 20px;
 `
+
 const CaptionUnitInfo = styled.span`
   font-size: 10px;
   font-weight: 900;
@@ -248,6 +249,7 @@ const CaptionUnitInfo = styled.span`
   padding-right: 20px;
   padding-top: 3px;
 `
+
 const CaptionUnitPrice = styled.span`
   font-size: 14px;
   letter-spacing: 0.3px;
@@ -260,6 +262,8 @@ const HomepageCarouselWrapper = styled.div`
   button {
     :hover {
       background-color: black !important;
+      /* opacity: 0.7 !important; */
+      /* above is same as CaptionLinkWrapper, but makes chevron too dark */
       opacity: 0.2 !important;
     }
   }
