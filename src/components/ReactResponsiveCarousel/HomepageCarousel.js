@@ -140,7 +140,8 @@ function captionLinkClicked() {
   console.log('caption link clicked!!!')
 }
 
-const HomepageCarousel = () => {
+const HomepageCarousel = props => {
+  console.log('homepageCarousel props: ', props)
   return (
     <HomepageCarouselWrapper>
       {/* <CenterLeft onClick={previous}> */}
@@ -154,12 +155,19 @@ const HomepageCarousel = () => {
       </CenterRight>
 
       <Carousel
+        // showArrows={false}
         showArrows
         showStatus={false}
         showIndicators
         showThumbs={false}
         infiniteLoop
       >
+        {/* <CenterRight onClick={onClickItem}> */}
+
+        {/* <CenterRight>
+          <ChevronRightLarge fill="white" />
+              </CenterRight> */}
+
         {slides.map(eachSlide => (
           <div key={eachSlide.src}>
             {/* <img src={eachSlide.src} alt={eachSlide.alt} /> */}
@@ -284,10 +292,17 @@ const HomepageCarouselWrapper = styled.div`
   }
 
   .carousel .slide img {
+    min-height: 650px; /* confirm what the min-height of images should be */
     max-height: 720px; /* this should be about 720 based on InVision design */
     /* NOTE: need to account for images less than max-height above */
     /* max-height: 400px; */
     width: auto;
+  }
+
+  .carousel.carousel-slider .control-arrow {
+    top: 45%;
+    bottom: 45%;
+    padding: 20px;
   }
 `
 
