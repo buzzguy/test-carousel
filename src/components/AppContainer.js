@@ -4,7 +4,6 @@ import styled from 'styled-components';
 // import PureReactCarousel from "./PureReactCarousel.js";
 // import NukaCarousel from "./NukaCarousel.js";
 // import ReactResponsiveCarousel from "./ReactResponsiveCarousel.js";
-import TestCarouselForLDP from './TestCarouselForLDP';
 
 class AppContainer extends Component {
   render() {
@@ -22,9 +21,6 @@ class AppContainer extends Component {
 
         {/* <p>ReactResponsiveCarousel:</p> */}
         {/* <ReactResponsiveCarousel /> */}
-
-        <p>TestCarouselForLDP:</p>
-        <TestCarouselForLDP />
       </AppContainerWrapper>
     );
   }

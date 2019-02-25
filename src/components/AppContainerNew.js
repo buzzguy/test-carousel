@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import TestCarouselContainer from './TestCarouselContainer';
 
-import TestCarouselForLDP from './TestCarouselForLDP';
-
-class AppContainer extends Component {
+class AppContainerNew extends Component {
   render() {
     return (
       <AppContainerWrapper>
-        <p>TestCarouselForLDP:</p>
-        <TestCarouselForLDP />
+        <p>0. TestCarouselForLDP:</p>
+        <TestCarouselContainer />
       </AppContainerWrapper>
     );
   }
 }
 
-export default AppContainer;
+export default AppContainerNew;
 
 const AppContainerWrapper = styled.div`
   /* background: limegreen; */
