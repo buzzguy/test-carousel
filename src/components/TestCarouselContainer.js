@@ -7,17 +7,17 @@ class TestCarouselContainer extends React.Component {
     super(props);
 
     this.state = {
-      currentSlide: 5,
+      currentSlideIndex: 7,
     };
   }
 
   render() {
     console.log('TestCarouselContainer, this.state is: ', this.state);
-    const { currentSlide } = this.state;
+    const { currentSlideIndex } = this.state;
     return (
       <div>
         <TitleWrapper>TestCarouselContainer:</TitleWrapper>
-        <TestCarouselForLDP selectedItem={currentSlide} />
+        <TestCarouselForLDP selectedItem={currentSlideIndex} />
       </div>
     );
   }
