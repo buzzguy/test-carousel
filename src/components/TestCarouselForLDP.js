@@ -40,7 +40,26 @@ const slides = [
     alt: '',
     legend: 'Legend 7',
   },
+  {
+    src: 'http://lorempixel.com/800/400/city/8/',
+    alt: '',
+    legend: 'Legend 8',
+  },
+  {
+    src: 'http://lorempixel.com/800/400/city/9/',
+    alt: '',
+    legend: 'Legend 9',
+  },
+  {
+    src: 'http://lorempixel.com/800/400/city/10/',
+    alt: '',
+    legend: 'Legend 10',
+  },
 ];
+
+function clickedImage(slide) {
+  console.log('clickedImage called on slide: ', slide);
+}
 
 const TestCarouselForLDP = props => {
   console.log('TestCarouselForLDP, props is: ', props);
@@ -57,7 +76,7 @@ const TestCarouselForLDP = props => {
     >
       {slides.map(eachSlide => {
         return (
-          <div key={eachSlide.src}>
+          <div key={eachSlide.src} onClick={() => clickedImage(eachSlide.src)}>
             <img src={eachSlide.src} alt={eachSlide.alt} />
             <p className="legend">{eachSlide.legend}</p>
           </div>

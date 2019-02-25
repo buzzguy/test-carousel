@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import TestCarouselForLDP from './TestCarouselForLDP';
 
 class TestCarouselContainer extends React.Component {
@@ -12,13 +13,18 @@ class TestCarouselContainer extends React.Component {
 
   render() {
     console.log('TestCarouselContainer, this.state is: ', this.state);
+    const { currentSlide } = this.state;
     return (
       <div>
-        <p>TestCarouselContainer:</p>
-        <TestCarouselForLDP selectedItem={this.state.currentSlide} />
+        <TitleWrapper>TestCarouselContainer:</TitleWrapper>
+        <TestCarouselForLDP selectedItem={currentSlide} />
       </div>
     );
   }
 }
 
 export default TestCarouselContainer;
+
+const TitleWrapper = styled.span`
+  background: yellow;
+`;
