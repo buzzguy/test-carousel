@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import TestCarouselContainer from './TestCarouselContainer'
+import TestCarouselContainer from './ReactResponsiveCarousel/TestCarouselContainer'
 import HomepageCarousel from './ReactResponsiveCarousel/HomepageCarousel'
 
 class AppContainer extends Component {
