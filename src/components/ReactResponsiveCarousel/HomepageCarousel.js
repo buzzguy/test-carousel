@@ -1,13 +1,13 @@
-import React from 'react'
-import { Carousel } from 'react-responsive-carousel'
-import styled from 'styled-components'
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import styled from 'styled-components';
 
-import ChevronLeftLarge from '../../assets/SvgChevronLeftLarge'
-import ChevronRightLarge from '../../assets/SvgChevronRightLarge'
+import ChevronLeftLarge from '../../assets/SvgChevronLeftLarge';
+import ChevronRightLarge from '../../assets/SvgChevronRightLarge';
 
-import homepageImage from '../../assets/homepage-image.jpg'
-import lionPic from '../../assets/lion.jpg'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import homepageImage from '../../assets/homepage-image.jpg';
+import lionPic from '../../assets/lion.jpg';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const slides = [
   {
@@ -132,10 +132,10 @@ const slides = [
     price: 999999,
     imageType: 'listing',
   },
-]
+];
 
 function captionLinkClicked() {
-  console.log('caption link clicked!!!')
+  console.log('caption link clicked!!!');
 }
 
 const HomepageCarousel = props => {
@@ -179,8 +179,8 @@ const HomepageCarousel = props => {
         ))}
       </Carousel>
     </HomepageCarouselWrapper>
-  )
-}
+  );
+};
 
 const CenterLeft = styled.div`
   cursor: wait;
@@ -193,7 +193,7 @@ const CenterLeft = styled.div`
   filter: drop-shadow(
     0 0.1rem 0.1rem black
   ); /* outline for light backgrounds */
-`
+`;
 
 const CenterRight = styled.div`
   cursor: wait;
@@ -206,20 +206,20 @@ const CenterRight = styled.div`
   filter: drop-shadow(
     0 0.1rem 0.1rem black
   ); /* outline for light backgrounds */
-`
+`;
 
 const SlideImage = styled.img`
   background-image: url({src});
   background-size: cover;
   width: 100%;
   height: auto;
-`
+`;
 
 const CaptionLinkWrapper = styled.div`
   background-color: black;
   bottom: auto;
   color: white;
-  cursor: help;
+  cursor: pointer;
   font-family: Avenir;
   height: 48px;
   padding-top: 14px;
@@ -231,7 +231,7 @@ const CaptionLinkWrapper = styled.div`
   left: auto;
   right: 0;
   top: 0;
-`
+`;
 
 const CaptionUnitAddress = styled.span`
   color: white;
@@ -240,7 +240,7 @@ const CaptionUnitAddress = styled.span`
   letter-spacing: 0.3px;
   line-height: 18px;
   padding-right: 20px;
-`
+`;
 
 const CaptionUnitInfo = styled.span`
   font-size: 10px;
@@ -248,12 +248,12 @@ const CaptionUnitInfo = styled.span`
   letter-spacing: 1px;
   padding-right: 20px;
   padding-top: 3px;
-`
+`;
 
 const CaptionUnitPrice = styled.span`
   font-size: 14px;
   letter-spacing: 0.3px;
-`
+`;
 
 const HomepageCarouselWrapper = styled.div`
   position: relative;
@@ -274,9 +274,7 @@ const HomepageCarouselWrapper = styled.div`
   }
 
   .carousel .slide img {
-    min-height: 650px; /* confirm what the min-height of images should be */
-    max-height: 720px; /* this should be about 720 based on InVision design */
-    /* NOTE: need to account for images less than max-height above */
+    height: 720px;
     width: auto;
   }
 
@@ -292,6 +290,6 @@ const HomepageCarouselWrapper = styled.div`
     border-top: none;
     border-bottom: none;
   }
-`
+`;
 
-export default HomepageCarousel
+export default HomepageCarousel;
