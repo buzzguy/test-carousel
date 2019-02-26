@@ -1,29 +1,16 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
-// import PureReactCarousel from "./PureReactCarousel.js";
-// import NukaCarousel from "./NukaCarousel.js";
-// import ReactResponsiveCarouselExample from './ReactResponsiveCarousel/ReactResponsiveCarouselExample'
+import TestCarouselContainer from './TestCarouselContainer'
 import HomepageCarousel from './ReactResponsiveCarousel/HomepageCarousel'
 
 class AppContainer extends Component {
   render() {
     return (
       <AppContainerWrapper>
-        {/* <h1>hello from AppContainer</h1> */}
+        <p>0. TestCarouselForLDP:</p>
+        <TestCarouselContainer />
 
-        {/* 
-        <p>PureReactCarousel:</p>
-        <PureReactCarousel /> 
-        */}
-
-        {/* <p>NukaCarousel:</p> */}
-        {/* <NukaCarousel /> */}
-
-        {/* <p>ReactResponsiveCarouselExample:</p> */}
-        {/* <ReactResponsiveCarouselExample /> */}
-
-        {/* <p>HomepageCarousel:</p> */}
+        <p>1. HomepageCarousel:</p>
         <HomepageCarousel />
       </AppContainerWrapper>
     )
@@ -33,7 +20,7 @@ class AppContainer extends Component {
 export default AppContainer
 
 const AppContainerWrapper = styled.div`
-  background: gray;
-  /* border: 1px solid black; */
+  /* background: limegreen; */
+  border: 1px solid black;
   /* margin: 20px; */
 `
