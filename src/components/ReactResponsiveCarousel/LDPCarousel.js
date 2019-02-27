@@ -143,13 +143,13 @@ const LDPCarousel = props => {
   const { selectedItem } = props
   return (
     <LDPCarouselWrapper>
-      <CenterLeft>
+      <ChevronWrapper background="purple" left="2%">
         <ChevronLeftLarge fill="white" />
-      </CenterLeft>
+      </ChevronWrapper>
 
-      <CenterRight>
+      <ChevronWrapper background="purple" left="98%">
         <ChevronRightLarge fill="white" />
-      </CenterRight>
+      </ChevronWrapper>
 
       <Carousel
         showArrows
@@ -171,30 +171,16 @@ const LDPCarousel = props => {
   )
 }
 
-const CenterLeft = styled.div`
+const ChevronWrapper = styled.div`
   cursor: wait;
-  display: flex; /* to center svg vertically within div */
-  left: 2%;
+  display: flex;
   position: absolute;
+  background: ${props => props.background};
+  left: ${props => props.left};
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  filter: drop-shadow(
-    0 0.1rem 0.1rem black
-  ); /* outline for light backgrounds */
-`
-
-const CenterRight = styled.div`
-  cursor: wait;
-  display: flex; /* to center svg vertically within div */
-  left: 98%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  filter: drop-shadow(
-    0 0.1rem 0.1rem black
-  ); /* outline for light backgrounds */
+  filter: drop-shadow(0 0.1rem 0.1rem black);
 `
 
 const SlideImage = styled.img`
