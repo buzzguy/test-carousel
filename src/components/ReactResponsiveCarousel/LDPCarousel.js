@@ -139,7 +139,8 @@ function imageClicked(imageName) {
 }
 
 const LDPCarousel = props => {
-  //   console.log('LDPCarousel props: ', props)
+  console.log('LDPCarousel props: ', props)
+  const { selectedItem } = props
   return (
     <LDPCarouselWrapper>
       <CenterLeft>
@@ -156,6 +157,7 @@ const LDPCarousel = props => {
         showIndicators={false}
         showThumbs={false}
         infiniteLoop
+        selectedItem={selectedItem}
       >
         {slides.map(eachSlide => (
           <div key={eachSlide.src} onClick={() => imageClicked(eachSlide.src)}>
