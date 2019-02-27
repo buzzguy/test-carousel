@@ -211,6 +211,12 @@ const LDPCarouselWrapper = styled.div`
   padding-top: 100px;
   padding-bottom: 100px;
 
+  /* display: flex; */
+  /* width: auto; */
+  /* text-align: center; */
+  /* align-items: center; */
+  /* justify-content: center; */
+
   /* overriding default styles of ReactResponsiveCarousel */
   button {
     :hover {
@@ -227,8 +233,8 @@ const LDPCarouselWrapper = styled.div`
   }
 
   .carousel .slide img {
-    /* height: 700px; */
-    height: 500px;
+    height: 700px;
+    /* height: 500px; */
 
     /* LDPCarousel is 700px in height, a lil smaller than HomePageCarousel */
     /* NOTE: need to account for images less than max-height above */
@@ -238,8 +244,14 @@ const LDPCarouselWrapper = styled.div`
     /* NOTE: can not have width auto for cover  */
   }
 
+  .slide {
+    flex: auto;
+    /* height: 500px; */
+  }
+
   .selected {
     border: 5px solid gold !important;
+
     /* transform: scale(1.5); */
     /* transform: translateX(110%) translateY(110%); */
     /* transform: scale(2); */
