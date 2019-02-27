@@ -274,8 +274,8 @@ const LDPCarouselWrapper = styled.div`
   }
 
   .carousel .slide img {
-    min-height: 650px; /* confirm what the min-height of images should be */
-    max-height: 720px; /* this should be about 720 based on InVision design */
+    height: 700px;
+    /* LDPCarousel is 700px in height, a lil smaller than HomePageCarousel */
     /* NOTE: need to account for images less than max-height above */
     width: auto;
   }
