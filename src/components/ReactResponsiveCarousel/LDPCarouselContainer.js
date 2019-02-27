@@ -7,7 +7,8 @@ class LDPCarouselContainer extends React.Component {
     super(props)
 
     this.state = {
-      currentSlideIndex: 7,
+      // currentSlideIndex: 2,
+      currentSlideIndex: 0,
     }
   }
 

@@ -158,6 +158,8 @@ const LDPCarousel = props => {
         showThumbs={false}
         infiniteLoop
         selectedItem={selectedItem}
+        centerMode={true}
+        // width={'50%'}
       >
         {slides.map(eachSlide => (
           <div key={eachSlide.src} onClick={() => imageClicked(eachSlide.src)}>
@@ -203,7 +205,11 @@ const SlideImage = styled.img`
 `
 
 const LDPCarouselWrapper = styled.div`
+  border: 3px solid blue;
   position: relative;
+  overflow: visible;
+  padding-top: 100px;
+  padding-bottom: 100px;
 
   /* overriding default styles of ReactResponsiveCarousel */
   button {
@@ -221,10 +227,31 @@ const LDPCarouselWrapper = styled.div`
   }
 
   .carousel .slide img {
-    height: 700px;
+    /* height: 700px; */
+    height: 500px;
+
     /* LDPCarousel is 700px in height, a lil smaller than HomePageCarousel */
     /* NOTE: need to account for images less than max-height above */
-    width: auto;
+    /* width: auto; */
+    /* background-size: contain; */
+    background-size: cover;
+    /* NOTE: can not have width auto for cover  */
+  }
+
+  .selected {
+    border: 5px solid gold !important;
+    /* transform: scale(1.5); */
+    /* transform: translateX(110%) translateY(110%); */
+    /* transform: scale(2); */
+    /* position: absolute; */
+    /* height: 700px; */
+
+    :hover {
+      /* transform: scaleY(1.5); */
+      /* position: absolute; */
+      /* margin-top: -100px; */
+      /* margin-bottom: -100px; */
+    }
   }
 
   .carousel.carousel-slider .control-arrow {
