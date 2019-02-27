@@ -159,7 +159,7 @@ const LDPCarousel = props => {
         infiniteLoop
         selectedItem={selectedItem}
         centerMode={true}
-        // width={'50%'}
+        centerSlidePercentage={60}
       >
         {slides.map(eachSlide => (
           <div key={eachSlide.src} onClick={() => imageClicked(eachSlide.src)}>
