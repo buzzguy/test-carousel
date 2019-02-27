@@ -134,8 +134,8 @@ const slides = [
   },
 ]
 
-function captionLinkClicked() {
-  console.log('caption link clicked!!!')
+function imageClicked(imageName) {
+  console.log('image clicked is: ', imageName)
 }
 
 const LDPCarousel = props => {
@@ -158,23 +158,8 @@ const LDPCarousel = props => {
         infiniteLoop
       >
         {slides.map(eachSlide => (
-          <div key={eachSlide.src}>
+          <div key={eachSlide.src} onClick={() => imageClicked(eachSlide.src)}>
             <SlideImage src={eachSlide.src} alt={eachSlide.alt} />
-
-            <CaptionLinkWrapper onClick={captionLinkClicked}>
-              <CaptionUnitAddress>{eachSlide.address}</CaptionUnitAddress>
-              <CaptionUnitInfo>
-                {eachSlide.bed} BD | {eachSlide.bath} BA
-              </CaptionUnitInfo>
-              <CaptionUnitPrice>
-                {new Intl.NumberFormat('en-US', {
-                  style: 'currency',
-                  currency: 'USD',
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                }).format(eachSlide.price)}
-              </CaptionUnitPrice>
-            </CaptionLinkWrapper>
           </div>
         ))}
       </Carousel>
@@ -213,46 +198,6 @@ const SlideImage = styled.img`
   background-size: cover;
   width: 100%;
   height: auto;
-`
-
-const CaptionLinkWrapper = styled.div`
-  background-color: black;
-  bottom: auto;
-  color: white;
-  cursor: help;
-  font-family: Avenir;
-  height: 48px;
-  padding-top: 14px;
-  padding-right: 24px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  position: absolute;
-  opacity: 0.7;
-  left: auto;
-  right: 0;
-  top: 0;
-`
-
-const CaptionUnitAddress = styled.span`
-  color: white;
-  font-family: 'Chronicle Display';
-  font-size: 16px;
-  letter-spacing: 0.3px;
-  line-height: 18px;
-  padding-right: 20px;
-`
-
-const CaptionUnitInfo = styled.span`
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  padding-right: 20px;
-  padding-top: 3px;
-`
-
-const CaptionUnitPrice = styled.span`
-  font-size: 14px;
-  letter-spacing: 0.3px;
 `
 
 const LDPCarouselWrapper = styled.div`
