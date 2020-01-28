@@ -4,9 +4,11 @@ import Carousel from "nuka-carousel";
 export default class extends React.Component {
   render() {
     return (
-      <Carousel wrapAround={true}>
+      <Carousel wrapAround slidesToShow={1}
+      width="100%"
+      heightMode="current">
         <img
-          src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide1"
+          src="http://placehold.it/1000x400/000000/c0392b/&text=slide1"
           alt=""
         />
         <img
@@ -14,7 +16,7 @@ export default class extends React.Component {
           alt=""
         />
         <img
-          src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide3"
+          src="http://placehold.it/1000x400/000000/c0392b/&text=slide3"
           alt=""
         />
         <img
@@ -22,7 +24,7 @@ export default class extends React.Component {
           alt=""
         />
         <img
-          src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5"
+          src="http://placehold.it/1000x400/000000/c0392b/&text=slide5"
           alt=""
         />
         <img

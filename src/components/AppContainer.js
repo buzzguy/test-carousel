@@ -1,19 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import LDPCarouselContainer from './ReactResponsiveCarousel/LDPCarouselContainer'
-import HomepageCarousel from './ReactResponsiveCarousel/HomepageCarousel'
+import NukaCarousel from './OtherCarousels/NukaCarousel'
 
 class AppContainer extends Component {
   render() {
     return (
       <AppContainerWrapper>
-        <p>0. LDPCarouselContainer:</p>
-        <LDPCarouselContainer />
 
-        <br />
+        <NukaCarousel />
 
-        <p>1. HomepageCarousel:</p>
-        <HomepageCarousel />
       </AppContainerWrapper>
     )
   }
